@@ -1,0 +1,2 @@
+def every():
+    return False
