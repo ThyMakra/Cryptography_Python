@@ -69,5 +69,6 @@ Set the LSB to 1 to make be sure that it’s an odd number
 > MSB is a bit of the highest digit, LSB is the lowest digit in binary
 
 
+> https://medium.com/p/49e6e6af32fb/responses/show
 ### Response
 * Found an error in the definition of Carmichael numbers. “There are some composite numbers that satisfies the Fermat’s little theorem for all possible values of a”. This is not correct, this “a” must be coprime to “n” (following your notation). Actually if you try to calculate all powers for the first Carmichael number 561 you will see that the exponentiation is not equal to 1 unless gcd(a,n)=1.

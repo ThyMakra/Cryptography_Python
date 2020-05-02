@@ -1,2 +1,0 @@
-def every():
-    return False

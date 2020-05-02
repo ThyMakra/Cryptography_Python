@@ -45,8 +45,10 @@ def generate_prime_candidate(length):
     # generate random bits
     p = getrandbits(length)
     # apply a mast to set MSB and LSB to 1
-    """ Is this binary operator or something? """
-    p |= (1 << length - 1) | 1
+    p |= (1 << length - 1) | 1 # p = p | ((1 << length - 1) | 1)
+    """ perform OR with p and a number 
+    that number is created by 
+    left shift 1 by (length - 1) 0's. Then it will perform OR with 1 it will get something like : 10000....001 """
     return p
 
 def generate_prime_number(length=1024):
@@ -62,12 +64,8 @@ def generate_prime_number(length=1024):
         p = generate_prime_candidate(length)
     return p
 
-# will generate prime with 127 ~ 128 digits
-""" prime = generate_prime_number(420)
-print(len(str(prime)))
-print(prime) """
+def main():
+    return True
 
-p = generate_prime_number(1024)
-print(p)
 
 
