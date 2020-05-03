@@ -1,39 +1,46 @@
-from large_prime.large_prime_generator import generate_prime_candidate, is_prime, generate_prime_number
-from random import randrange, getrandbits
-""" length = 1024
-prime_q = generate_prime_number(length)
+from prime_root_pair import generated_pair
+from modular_exponentiation.power_mod import power_mod
 
-# is_p_prime = True
-for _ in range(1024):
-    random_r = generate_prime_candidate(length)
-    prime_p = prime_q*random_r + 1
-    is_p_prime = is_prime(prime_p, 128)
-    if is_p_prime:
-        print(f'q = {prime_q}')
-        print(f'r = {random_r}')
-        print(f'p = {prime_p}')
-        break
-print(is_p_prime) """
+from random import choice, getrandbits, randrange
 
+print('#'*80)
+print(f'Diffie-Hellman Key exchange!')
+print('My only weakness is Man-In-The middle attack where the hacker masqurade as both parties and owns both the parties\' secret keys.')
+print(f'Please enter your name: ')
+# user_name = input()
+# print(f'Name recorded. Establishing connection between user {user_name} and user Meak!!')
+global_pair = choice(generated_pair)
+prime = global_pair['prime']
+primitive_root = choice(global_pair['primitive_root'])
+print(f'Both parties agree on: ....')
 
-""" Find a prime : k. Find a random r that k * r + 1 = p and p is prime """
-length = 1024
-prime_k = generate_prime_number(length)
+print(f'Prime(n): {prime}')
 
-# is_p_prime = True
-for _ in range(10 ** 5):
-    random_length = randrange(2, length - 1)
-    # random_r = generate_prime_candidate(random_length)
-    random_r = getrandbits(random_length)
-    
-    prime_p = prime_k*random_r + 1
-    is_p_prime = is_prime(prime_p, 128)
-    if is_p_prime:
-        print(f'k = {prime_k}')
-        print(f'r = {random_r}')
-        print(f'p = {prime_p}')
-        break
-print(is_p_prime)
+print(f'Primitive root(g): {primitive_root}')
 
-k = 110147360880977326145454323208221071089784097565692230883406944964885283866809403126305248705095738645969886839883972829698185023465616223853188508575646895119112813982949306635369092626464429143567242208129503631864031757968830572178817452781169212310750061873270404450233561253396099991206848635615097818383
-p = 43082051866405784268948008360239663371476383135695473540552891195307856350251150004363160861540864492690236763621355192274027092576551112340323465734825985622409182429611461053257718176197766147966093597607140010120892130855358598001143531843921797726275980046817650188458876441923529364987308191285520342628934557842563964004452802050717206851017049458919
+print('Note: The following information is a sensitive information only known to the 2 parties:')
+key_len = randrange(128, 1024)
+a = getrandbits(key_len)
+b = getrandbits(key_len)
+
+print('Both parties have generated their own secret key a and b.')
+print(f'a: {a}')
+
+print(f'b: {b}')
+
+sent_key = power_mod(primitive_root, a, prime)
+print(f'The generated g^a mod n: \n{sent_key}')
+print('You send the generated key to the other user.')
+
+recieved_key = power_mod(primitive_root, b, prime)
+print(f'You received the generated key from Meak.\nThe generated g^b mod n: \n{recieved_key}')
+
+session_key_1 = power_mod(sent_key, b, prime)
+session_key_2 = power_mod(recieved_key, a, prime)
+print(f'The session key on your side is {session_key_1}')
+
+print(f'The session key on the party is {session_key_2}')
+
+print(f'Program checked: {session_key_1 == session_key_2}')
+print('The key exchange has been done!')
+

@@ -1,0 +1,1 @@
+from large_prime import generate_prime_number
