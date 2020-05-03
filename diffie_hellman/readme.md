@@ -24,7 +24,7 @@ During the writing of the program, I have divided in to 3 main steps:
 2. How to raise a number to a big exponent (power_mod.py ~ 10^6 bits exponent)
 3. How to check for the primitive root of the prime number (The most difficult part)
 
-These 3 parts have been divided into its individual sub-folder which its own markdown. (Take a look at each folder to see the explanation of each topic).
+These 3 parts have been divided into its individual sub-folder with its own explanation markdown. (Take a look at each folder to see the explanation of each topic).
 
 __Comment:__
 The the research took me 4 days of only reading about this topic which really took a lot of my time from doing anything else. Though the sense of accomplishment from being able to play with really big numbers is indescribable that I wouldn't regret any one bit spending all this time. \
