@@ -62,3 +62,5 @@ Alternatively, you do not look for a primitive element, but for the generator of
 > Reference: https://crypto.stackexchange.com/questions/56155/primitive-root-of-a-very-big-prime-number-elgamal-ds
 
 ## Diffie-Hellman
+__Read More__
+https://crypto.stackexchange.com/questions/820/how-does-one-calculate-a-primitive-root-for-diffie-hellman

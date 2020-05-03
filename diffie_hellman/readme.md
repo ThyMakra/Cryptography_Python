@@ -34,3 +34,12 @@ I have took a liking to Diffie-Hellman since the first time I have heard about i
 Overall, This may have took a long time to finish but it opens up another door for me to look more into Number Thoery and its algorithm. I feel like I would be able to write a better program in competitive programming by learning all of these algorithm. The goal is to read more books about thoeries like these.
 
 Adios!
+
+### References
+* Primality check: https://medium.com/p/49e6e6af32fb/responses/show
+* Fermat's Little theorem proof: https://primes.utm.edu/notes/proofs/FermatsLittleTheorem.html
+* Congruence: https://mathworld.wolfram.com/Congruence.html
+* Exponential modulus: https://www.nku.edu/~christensen/1002mat584%20modular%20exponentiation.pdf 
+* Primitve Root DH: https://crypto.stackexchange.com/questions/820/how-does-one-calculate-a-primitive-root-for-diffie-hellman
+* Primitive Root ElegamaDS: 
+https://crypto.stackexchange.com/questions/56155/primitive-root-of-a-very-big-prime-number-elgamal-ds
