@@ -10,10 +10,10 @@ Even though the pair does not have to be renewed every communication, their size
 > Prime Factorization: finding factors of (prime - 1) to find the generator then find the primitive root.
 
 ## Cloning the project
-1. In the github repository, you can download the zip files of the whole repository.
-2. By using git command and clone the project:
+1. In the github repository, you can download the zip files of the whole repository in "Clone or download".
+2. Or using git command and clone the project:
     > $ git init \
-    > $ git clone 
+    > $ git clone https://github.com/ThyMakra/Cryptography_Python.git
 
 After cloning the repository, to execute the Diffie-Hellman key exchange, run the python file:\
 diffie_hellman/diffie_hellman.py
